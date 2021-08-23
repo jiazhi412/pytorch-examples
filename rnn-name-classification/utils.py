@@ -33,7 +33,7 @@ def load_data():
         lines = io.open(filename, encoding='utf-8').read().strip().split('\n')
         return [unicode_to_ascii(line) for line in lines]
     
-    for filename in find_files('data/names/*.txt'):
+    for filename in find_files('rnn-name-classification/data/names/*.txt'):
         category = os.path.splitext(os.path.basename(filename))[0]
         all_categories.append(category)
         
@@ -94,6 +94,7 @@ if __name__ == '__main__':
     print(unicode_to_ascii('Ślusàrski'))
     
     category_lines, all_categories = load_data()
+    # print(category_lines)
     print(category_lines['Italian'][:5])
     
     print(letter_to_tensor('J')) # [1, 57]
