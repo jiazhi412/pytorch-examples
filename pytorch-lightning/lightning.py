@@ -50,7 +50,7 @@ class LitNeuralNet(pl.LightningModule):
     def train_dataloader(self):
         # MNIST dataset
         train_dataset = torchvision.datasets.MNIST(
-            root="./data", train=True, transform=transforms.ToTensor(), download=True
+            root="./data", train=True, transform=transforms.ToTensor()
         )
         # Data loader
         train_loader = torch.utils.data.DataLoader(
